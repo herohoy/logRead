@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$//logRefresh.iml" filepath="$PROJECT_DIR$//logRefresh.iml" />
+      <module fileurl="file://D:/scala/workspace/school/school.iml" filepath="D:/scala/workspace/school/school.iml" />
     </modules>
   </component>
 </project>
