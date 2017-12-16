@@ -63,8 +63,9 @@ object Main {
 
     //基于上面的已注释代码，以下方法从12月15日想到
 
-    val lineMapList = LogReadUtil.descThreadMapList("E:/detail-productdb-service.2017-11-29.log")
+    val lineMapList = LogReadUtil.descThreadMapListOfRe("E:/detail-productdb-service.2017-11-29.log")
 
-    for(m<-lineMapList) println(m._1+":"+m._2.size)
+    for(m<-lineMapList)
+      println(m._1+":"+m._2.size)
   }
 }
