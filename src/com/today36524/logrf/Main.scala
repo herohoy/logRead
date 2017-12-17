@@ -2,8 +2,6 @@ package com.today36524.logrf
 
 import com.today36524.logrf.util.LogReadUtil
 
-import scala.io.Source
-
 object Main {
   def main(args: Array[String]): Unit = {
 
@@ -57,13 +55,13 @@ object Main {
 //
 //    for(m<-lineMapList) println(m._1+":"+m._2.size)
 
-
-
+//    val df = new java.text.SimpleDateFormat("HH:mm:ss SSS ")
+//    println(df.parse("00:00:00 027 ").getTime)
 
 
     //基于上面的已注释代码，以下方法从12月15日想到
 
-    val lineMapList = LogReadUtil.descThreadMapListOfRe("E:/detail-productdb-service.2017-11-29.log")
+    val lineMapList = LogReadUtil.descThreadMapListOfRe("D:/detail-productdb-service.2017-11-29.log")
 
     for(m<-lineMapList)
       println(m._1+":"+m._2.size)

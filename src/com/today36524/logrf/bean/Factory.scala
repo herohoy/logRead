@@ -7,8 +7,8 @@ package com.today36524.logrf.bean
   * @param productType 产品类型
   */
 case class Factory(name:String,factoryType:Int,productType:Int) {
-  def factoryTypeShow(i:Int) : String =
-    i match {
+  def factoryTypeShow(factoryType:Int) : String =
+    factoryType match {
       case 1 => "重工厂"
       case 2 => "制造工厂"
       case _ => "未知"
