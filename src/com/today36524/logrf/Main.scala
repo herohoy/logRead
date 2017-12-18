@@ -58,12 +58,35 @@ object Main {
 //    val df = new java.text.SimpleDateFormat("HH:mm:ss SSS ")
 //    println(df.parse("00:00:00 027 ").getTime)
 
+//    """11-29 00:00:00 239 trans-pool-1-thread-37 DEBUG - com.isuwang.soa.gcprice.service.GcPricesService 1.0.0 queryGcPrices 22704 request header:{"serviceName":"com.isuwang.soa.gcprice.service.GcPricesService","methodName":"queryGcPrices","versionName":"1.0.0","transactionId":"null","transactionSequence":"null","callerFrom":"web","callerIp":"192.168.32.3","operatorId":null,"operatorName":"null","customerId":null,"customerName":"null","""
+//      """[\S\s]*DEBUG\s-\s[\S.]+[A-Z]+[\S]*\s1\.0\.0\s[\S]+\s[\d]+\srequest\sheader:"""
+
+//    val reg  = """\srequest\sheader:""".r
+//    val line = """ request header:{"""
+//    println(reg.findFirstIn(line))
+//      val regRes =
+//      """[\S\s]*DEBUG\s-\s[\S.]+[A-Z]+[\S]*\s1\.0\.0\s[\S]+\sOptional\.empty\sresponse\sheader:""".r
+//      val line = """11-29 00:00:00 232 trans-pool-1-thread-31 DEBUG - com.isuwang.soa.gcprice.service.GcPricesService 1.0.0 queryGcPrices Optional.empty response header:Optio"""
+//      println(regRes.findFirstIn(line))
 
     //基于上面的已注释代码，以下方法从12月15日想到
 
-    val lineMapList = LogReadUtil.descThreadMapListOfRe("D:/detail-productdb-service.2017-11-29.log")
+    val fileName = "D:/detail-productdb-service.2017-11-29.log"
+//    val lineMapList = LogReadUtil.descListOfServiceMethods(fileName)
+//
+//    println("服务名:总调用次数")
+//    for(m<-lineMapList)
+//      println(m._1+":"+m._2.size)
+//
+//    println(lineMapList.size)
 
-    for(m<-lineMapList)
-      println(m._1+":"+m._2.size)
+//    val lineMapList = LogReadUtil.avgTimelenOfServiceMethods(fileName)
+//
+//    println("线程名:统计数字")
+
+    val avgList = LogReadUtil.analyzeAverageTime(fileName)
+
+    println(avgList.size)
+
   }
 }
